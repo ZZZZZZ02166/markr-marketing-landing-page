@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Overview from "../components/Overview";
 import Features from "../components/Features";
 import Faq from "../components/Faq";
+import Subscribe from "../components/Subscribe";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <Overview />
         <Features />
         <Faq />
+        <Subscribe />
       </main>
     </>
   );

@@ -912,6 +912,7 @@
       outline-color: var(--purple);
     }
     .field input::placeholder { color: #9aa1bd; }
+    .form-card button[type="submit"] { margin-top: 8px; }
     .form-note { color: var(--muted); font-size: 13px; margin-bottom: 0; }
     .form-status { min-height: 24px; color: var(--purple-deep); font-size: 14px; font-weight: 900; }
 

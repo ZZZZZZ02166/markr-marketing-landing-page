@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Nav from "../components/Nav";
+import Hero from "../components/Hero";
 
 export default function Home() {
   return (
@@ -14,7 +15,9 @@ export default function Home() {
 
       <Nav />
 
-      <main id="main">{/* sections added incrementally */}</main>
+      <main id="main">
+        <Hero />
+      </main>
     </>
   );
 }

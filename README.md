@@ -1,79 +1,118 @@
-# Markr — EDM Landing Page
+# Markr Marketing Landing Page
 
-A responsive marketing landing page and EDM (email direct marketing) subscription
-form for **Markr**, an AI-assisted assessment concept for K–12 schools. Built with
-**Next.js (Pages Router)** and **raw CSS** — no Tailwind, no UI or styling libraries.
+This repository contains the Next.js implementation of a one-page marketing
+landing page for **Markr**, an AI-powered student assessment platform for K-12
+schools.
 
-## Running locally
+The page is aimed at school principals and heads of curriculum, with the goal
+of encouraging visitors to subscribe to product news and updates.
+
+## Running Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open http://localhost:3000.
+Open http://localhost:3000 in your browser.
 
-Other scripts:
+Additional scripts:
 
 ```bash
-npm run build   # production build
-npm run start   # serve the production build
+npm run build
+npm run start
 ```
+
+## Implementation
+
+- Built with **Next.js using the Pages Router**.
+- Styled with **raw CSS** in a single global stylesheet.
+- No Tailwind, CSS framework, component library or third-party styling package.
+- Kept intentionally lean, with only `next`, `react` and `react-dom` as
+  dependencies.
+- Structured as reusable page sections inside `components/`.
+- Designed to work across desktop and mobile layouts, including approximately
+  1440px and 375px viewport widths.
 
 ## Approach
 
-- **Next.js Pages Router.** The page is composed in `pages/index.js` from small,
-  focused section components in `components/`. `pages/_document.js` holds the
-  Google Fonts links and document `<head>`; `pages/_app.js` imports the single
-  global stylesheet.
-- **Raw CSS, one stylesheet.** All styling lives in `styles/globals.css` using
-  plain CSS with custom properties (`:root` design tokens for colour, spacing and
-  the type scale) and media queries. No CSS-in-JS, no preprocessor, no Tailwind.
-- **Responsive.** Designed for desktop (~1440) down to mobile (~375). Breakpoints
-  at 980px, 720px and 430px collapse the grids (overview cards, feature rows,
-  footer) into a single column and scale headings down.
-- **Interactivity is client-side React state.** The FAQ list and the three feature
-  accordions use `useState` (one open item per group). No external state or
-  animation libraries.
-- **Lean dependencies.** Only `next`, `react` and `react-dom`. Nothing else.
+The page is structured as a concise marketing landing page for school decision
+makers. The content focuses on the value Markr provides to principals and heads
+of curriculum: faster assessment workflows, clearer visibility of student
+progress and practical insight for curriculum planning.
 
-## Form
+The interface is split into focused sections so visitors can quickly understand
+the product, review key capabilities, read common questions and subscribe for
+updates. The implementation uses semantic sections, labelled form fields,
+accordion controls with `aria-expanded`, an `aria-live` form status message and
+a skip link for keyboard users.
 
-The EDM subscription form (`components/Subscribe.js`) is **front-end only** — it is
-**not** connected to any backend, database or email service, as permitted by the
-brief. It uses controlled inputs and basic validation:
+## Page Sections
 
-- name and email are required,
-- email is checked against a simple pattern,
-- on success it shows a confirmation message and resets the fields.
+The landing page includes all required sections from the brief:
 
-## Project structure
+- Hero
+- Product overview
+- Features and capabilities
+- FAQ
+- EDM subscription form
+- Footer
 
-```
-markr-next/
+## Form Behaviour
+
+The EDM subscription form is implemented as a front-end-only experience, as
+required for this exercise. It is not connected to a backend, database or email
+service.
+
+The form includes basic validation:
+
+- full name is required,
+- work email is required,
+- email format is checked,
+- successful submission displays a confirmation message and resets the fields.
+
+## Project Structure
+
+```text
+markr-marketing-landing-page/
 ├── components/
 │   ├── Nav.js
 │   ├── Hero.js
 │   ├── Overview.js
-│   ├── Features.js      # feature rows + accordions (useState)
-│   ├── Faq.js           # FAQ accordion (useState)
-│   ├── Subscribe.js     # EDM form, front-end validation
+│   ├── Features.js
+│   ├── Faq.js
+│   ├── Subscribe.js
 │   └── Footer.js
 ├── pages/
-│   ├── _app.js          # imports styles/globals.css
-│   ├── _document.js     # <head>, fonts
-│   └── index.js         # page composition
+│   ├── _app.js
+│   ├── _document.js
+│   └── index.js
 ├── styles/
-│   └── globals.css      # all styling + design tokens + media queries
+│   └── globals.css
 ├── package.json
+├── package-lock.json
 └── README.md
 ```
 
-## Tools & AI tooling
+## Tools and AI Usage
 
-- **Next.js** (Pages Router) and **React**.
-- Fonts: **Gabarito** and **Inter**, loaded from Google Fonts.
-- **AI tooling:** the design was iterated on and the HTML/CSS was ported to this
-  Next.js structure with the help of **Claude** (Anthropic's AI assistant). The
-  design direction, copy, colour system and component breakdown were reviewed and
-  adjusted manually.
+The Next.js implementation was built with React, the Pages Router and raw CSS.
+Google Fonts are used for typography.
+
+AI tools were used to support copywriting, layout iteration, implementation
+review and code quality checks. Claude was used during the design and code
+iteration process, and Codex was used to review the project against the exercise
+requirements and refine this README.
+
+## Verification
+
+The project has been checked against the technical requirements for the Next.js
+deliverable:
+
+- `npm install` installs the project dependencies.
+- `npm run dev` starts the local development server.
+- `npm run build` completes successfully.
+- The implementation uses the Pages Router.
+- Styling is written in raw CSS.
+- No unnecessary npm packages are included.
+- Desktop and mobile layouts have been reviewed.

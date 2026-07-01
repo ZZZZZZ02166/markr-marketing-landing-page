@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import Hero from "../components/Hero";
 import Overview from "../components/Overview";
 import Features from "../components/Features";
+import Faq from "../components/Faq";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <Overview />
         <Features />
+        <Faq />
       </main>
     </>
   );

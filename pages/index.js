@@ -5,6 +5,7 @@ import Overview from "../components/Overview";
 import Features from "../components/Features";
 import Faq from "../components/Faq";
 import Subscribe from "../components/Subscribe";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -26,6 +27,8 @@ export default function Home() {
         <Faq />
         <Subscribe />
       </main>
+
+      <Footer />
     </>
   );
 }

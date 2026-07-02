@@ -101,8 +101,8 @@ Google Fonts are used for typography.
 
 AI tools were used to support copywriting, layout iteration, implementation
 review and code quality checks. Claude was used during the design and code
-iteration process, and Codex was used to review the project against the exercise
-requirements and refine this README.
+iteration process, while Codex was used to review the Next.js project against the exercise requirements, identify potential implementation issues, and support testing of the local setup.
+
 
 ## Verification
 
